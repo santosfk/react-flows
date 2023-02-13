@@ -43,7 +43,12 @@ function Flow() {
   );
   return (
     <div style={{ height: "100%" }}>
-      <ReactFlow>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+      >
         <Background />
         <Controls />
       </ReactFlow>
