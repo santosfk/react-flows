@@ -10,6 +10,7 @@ import ReactFlow, {
   NodeChange,
   addEdge,
   Connection,
+  FitViewOptions,
 } from "reactflow";
 import "reactflow/dist/style.css";
 
@@ -47,6 +48,10 @@ function Flow() {
     (params: Edge<any> | Connection) => setEdges((eds) => addEdge(params, eds)),
     []
   );
+  const fitViewOptions: FitViewOptions = {
+    padding: 0.2,
+  };
+
   return (
     <div style={{ height: "100%" }}>
       <ReactFlow
@@ -55,6 +60,8 @@ function Flow() {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        fitViewOptions={fitViewOptions}
+        fitView
       >
         <Background />
         <Controls />
